@@ -12,10 +12,8 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    //return "hola que tal";
-    $a = 10;
-    echo "ei!!".$a;
+    return view('principal');
+    
 });
 
 Route::get('/productes','productsController@llistat');
@@ -24,12 +22,20 @@ Route::post('productes/guardar','productsController@add');
 Route::get('productes/esborrar/{id}','productsController@delete')
 ->where('id', '[0-9]+');
 
-
 Route::get('/productes/actualitzar/{id}','productsController@formEdit')
 ->where('id', '[0-9]+');
-
 Route::post('/productes/actualitzar/{id}','productsController@edit');
 
+
+Route::get('/usuaris','usersController@llistat');
+Route::get('/usuaris/afegir','usersController@formAdd');
+Route::post('usuaris/guardar','usersController@add');
+Route::get('usuaris/esborrar/{id}','usersController@delete')
+->where('id', '[0-9]+');
+
+Route::get('/usuaris/actualitzar/{id}','usersController@formEdit')
+->where('id', '[0-9]+');
+Route::post('/usuaris/actualitzar/{id}','usersController@edit');
 
 Route::get('/hola/{usuari}', 'provaController@saluda');
 

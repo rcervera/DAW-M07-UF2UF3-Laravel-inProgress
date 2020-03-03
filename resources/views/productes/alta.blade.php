@@ -1,3 +1,6 @@
+@extends('layouts.plantilla')
+
+@section('contingut')
 <h3>Alta producte</h3>
 <form method="POST" action="{{url('/productes/guardar')}}">
 	@csrf
@@ -6,3 +9,4 @@
 	descripcio <input type="text" name="descripcio"><br>
 	<input type="submit" name="balta" value="Desar">
 </form>
+@endsection

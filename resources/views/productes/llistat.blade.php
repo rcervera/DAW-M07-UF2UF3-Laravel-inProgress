@@ -1,6 +1,6 @@
-<html>
-<head></head>
-<body>
+@extends('layouts.plantilla')
+
+@section('contingut')
 	<h3>Llistat: Productes</h3>
 	<a href="{{url('/productes/afegir')}}">Afegir producte</a>
 	<table>
@@ -22,5 +22,4 @@
 	@if(session('status'))
 	  {{session('status')}}
     @endif
-</body>
-</html>
+@endsection
